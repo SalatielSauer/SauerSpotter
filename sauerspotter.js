@@ -145,7 +145,7 @@ function create_Serverdetails(host, dialogID, state) {
 		};
 	curserver.style.top = (event.clientY - 50);
 	};
-	httpGetAsync("http://sauertracker.net/api/v2/server/" + host, function(response) {
+	httpGetAsync("https://sauertracker.net/api/v2/server/" + host, function(response) {
 		teamslist = [];
 		for (t = 0; t < data.teams.length; t++){teamslist.push(data.teams[t].name)};
 		//dialog content
@@ -159,14 +159,14 @@ function create_Serverdetails(host, dialogID, state) {
 		serverplayers_otherm = 0;
 		//mapthumb as background
 		if (allmaps.includes(data.mapName)){
-			curserver.style.backgroundImage = 'url("http://sauertracker.net/images/mapshots/' + data.mapName + '.jpg")';
+			curserver.style.backgroundImage = 'url("https://sauertracker.net/images/mapshots/' + data.mapName + '.jpg")';
 		} else {
 			curserver.style.backgroundImage = 'url("https://sauer-sauce.github.io/content/mapshots/coopedit_1.jpg")';
 		};
 		
 		//start dialog header
 		curserver.innerHTML = closebtn;
-		curserver.innerHTML += "<center><p id='serverdesc'>" + data.descriptionStyled + "<img title='" + data.countryName + "' id='icon' src='http://sauertracker.net/images/flags/" + data.country + ".png'></img></p></center>";
+		curserver.innerHTML += "<center><p id='serverdesc'>" + data.descriptionStyled + "<img title='" + data.countryName + "' id='icon' src='https://sauertracker.net/images/flags/" + data.country + ".png'></img></p></center>";
 		curserver.innerHTML += "<center><p id='serverslots'>" + (getmmcolor(data.masterMode)) + " " + getserverslots() + " " + data.mapName + " [" + data.gameMode + (getFixedtime(data.gameMode, data.timeLeftString)) + "]</p></center>"; 
 
 		//read clients
@@ -178,7 +178,7 @@ function create_Serverdetails(host, dialogID, state) {
 			playerDeaths = data.players[i].deaths;
 			
 			if (data.players[i].country){
-				playerFlag = "<img title='" + data.players[i].countryName + "' style='position: unset;' id='icon' src='http://sauertracker.net/images/flags/" + data.players[i].country + ".png'></img> <p style='font-family: sans-serif; color: white; display: inline'>" + data.players[i].country + "</p>";
+				playerFlag = "<img title='" + data.players[i].countryName + "' style='position: unset;' id='icon' src='https://sauertracker.net/images/flags/" + data.players[i].country + ".png'></img> <p style='font-family: sans-serif; color: white; display: inline'>" + data.players[i].country + "</p>";
 			} else {playerFlag = ""};
 			
 			if ((data.teams.length == 0) && (data.gameMode != "coop_edit")) {
@@ -236,7 +236,7 @@ function verifystates(state, host){
 		return;
 	};
 	playerInactives = 0;
-	httpGetAsync("http://sauertracker.net/api/v2/server/" + host, function(response) {
+	httpGetAsync("https://sauertracker.net/api/v2/server/" + host, function(response) {
 		for (i = 0; i < data.clients; i++){
 			if (data.players[i].state == 5) {
 				playerInactives++
@@ -250,7 +250,7 @@ function verifystates(state, host){
 };
 
 function verifyserverbrowser() {
-	httpGetAsync("http://sauertracker.net/api/v2/servers", function(response) {
+	httpGetAsync("https://sauertracker.net/api/v2/servers", function(response) {
 		for (i = 0; i < data.length; i++){
 			servers = data.length;
 			serverDescription = data[i].descriptionStyled;
