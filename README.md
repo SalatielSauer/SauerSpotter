@@ -1,5 +1,5 @@
 # SauerSpotter
-#### An experimental look for the SauerTracker.net API, allowing you to watch multiple servers at the same time. <br>
+#### An experimental look for the SauerTracker.net API, allowing you to watch multiple servers at once. <br>
 https://salatielsauer.github.io/SauerSpotter/ <br>
 
 SauerSpotter by @SalatielSauer <br>
