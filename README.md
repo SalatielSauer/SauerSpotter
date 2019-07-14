@@ -1,2 +1,7 @@
 # SauerSpotter
-An experimental alternative to SauerTracker.net
+#### An experimental look for the SauerTracker.net API, allowing you to watch multiple servers at once. <br>
+https://salatielsauer.github.io/SauerSpotter/ <br>
+
+SauerSpotter by @SalatielSauer <br>
+This page is a pirated version of [SauerTracker](https://sauertracker.net) <br>
+[Sauerbraten.org](http://sauerbraten.org)
