@@ -91,8 +91,22 @@ function moveDialog(dialogID, state){
 	} else {curserver2.style.zIndex = 0};
 };
 
+function getFixedteam(){
+	if ((data.teams.length > 0) && data.players[i].state != 5){
+		return " | Team: " + data.players[i].team;
+	} else {return ""};
+}
+
+function getPlayerIcon(pstate){
+	if (pstate == 0){return "<i class='fas fa-user-circle'></i>";};
+	if (pstate == 1){return "<i class='fas fa-skull-crossbones'></i>";};
+	if ((pstate == 0) || (pstate == 2)){return "<i class='fas fa-user-shield'></i>";};
+	if (pstate == 4){return "<i class='fas fa-user-edit'></i>";};
+	if (pstate == 5){return "<i class='fas fa-eye'></i>";};
+};
+
 function getPlayerByTeam(team, i){
-	return "<div style='background-color: " + team + "; display: -webkit-box;'><p style='background-color: " + team + "' id='serverplayers'>" + data.players[i].name + "<br><span id='serverplayersDetails'>" + playerFrags + "/" + playerDeaths + " | " + playerScores + " | " + playerPing + "</span></p>" + playerFlag + "</div>";	
+	return "<div style='background-color: " + team + "; display: -webkit-box;'><p style='background-color: " + team + "' id='serverplayers'>" + (getPlayerIcon(data.players[i].state)) + " " + data.players[i].name + "<br><span id='serverplayersDetails'>" + playerFrags + "/" + playerDeaths + " | " + playerScores + " | " + playerPing + (getFixedteam()) + "</span></p>" + playerFlag + "</div>";	
 };
 
 function getFixedtime(mode, time){
@@ -166,13 +180,13 @@ function create_Serverdetails(host, dialogID, state) {
 		
 		//start dialog header
 		curserver.innerHTML = closebtn;
-		curserver.innerHTML += "<center><p id='serverdesc'>" + data.descriptionStyled + "<img title='" + data.countryName + "' id='icon' src='https://sauertracker.net/images/flags/" + data.country + ".png'></img></p></center>";
+		curserver.innerHTML += "<center><p id='serverdesc'><i class='fas fa-server' style='float: left'></i> " + data.descriptionStyled + "<img title='" + data.countryName + "' id='icon' src='https://sauertracker.net/images/flags/" + data.country + ".png'></img></p></center>";
 		curserver.innerHTML += "<center><p id='serverslots'>" + (getmmcolor(data.masterMode)) + " " + getserverslots() + " " + data.mapName + " [" + data.gameMode + (getFixedtime(data.gameMode, data.timeLeftString)) + "]</p></center>"; 
 
 		//read clients
 		for (i = 0; i < data.clients; i++){
 			
-			playerFrags = "K/D: " + data.players[i].frags;
+			playerFrags = "KD: " + data.players[i].frags;
 			playerPing = "Ping: " + data.players[i].ping;
 			playerScores = "Flags: " + data.players[i].flags;
 			playerDeaths = data.players[i].deaths;
@@ -183,25 +197,31 @@ function create_Serverdetails(host, dialogID, state) {
 			
 			if ((data.teams.length == 0) && (data.gameMode != "coop_edit")) {
 				if (data.players[i].state == 5) {
+					//spectator in no-team modes (grey)
 					serverplayers_spec += getPlayerByTeam("#9a9a9a99", i);	
 				} else {
+					//player in no-team modes (green)
 					serverplayers_other += getPlayerByTeam("#37f94699", i);
 				};
 			} else {
 				if ((data.players[i].state == 5) || (data.gameMode == "coop_edit")) {
+					//spectator or edit mode (grey)
 					serverplayers_spec += getPlayerByTeam("#9a9a9a99", i);	
 				} else {
-					if (data.players[i].team == "evil") {
-						serverplayers_evil += getPlayerByTeam("#b53f3f99", i);
-						serverplayers_evilm++;
-					};
-					if (data.players[i].team == "good"){
-						serverplayers_good += getPlayerByTeam("#3f51b599", i);
-						serverplayers_goodm++;
-					};
-					
-					if (!teamslist.includes("evil") && !teamslist.includes("good")){
+					//custom team (brown)
+					if (data.players[i].team != "evil" && data.players[i].team != "good"){
 						serverplayers_other += getPlayerByTeam("#82820469", i);
+					} else {
+						//evil (red)
+						if (data.players[i].team == "evil") {
+							serverplayers_evil += getPlayerByTeam("#b53f3f99", i);
+							serverplayers_evilm++;
+						};
+						//good (blue)
+						if (data.players[i].team == "good"){
+							serverplayers_good += getPlayerByTeam("#3f51b599", i);
+							serverplayers_goodm++;
+						};
 					};
 				};
 			};
