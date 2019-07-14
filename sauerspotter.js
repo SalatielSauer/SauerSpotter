@@ -182,7 +182,11 @@ function create_Serverdetails(host, dialogID, state) {
 			} else {playerFlag = ""};
 			
 			if ((data.teams.length == 0) && (data.gameMode != "coop_edit")) {
-				serverplayers_other += getPlayerByTeam("#37f94699", i);
+				if (data.players[i].state == 5) {
+					serverplayers_spec += getPlayerByTeam("#9a9a9a99", i);	
+				} else {
+					serverplayers_other += getPlayerByTeam("#37f94699", i);
+				};
 			} else {
 				if ((data.players[i].state == 5) || (data.gameMode == "coop_edit")) {
 					serverplayers_spec += getPlayerByTeam("#9a9a9a99", i);	
@@ -221,8 +225,8 @@ function create_Serverdetails(host, dialogID, state) {
 				//set teams
 				curserver.innerHTML += serverplayers_good;
 				curserver.innerHTML += serverplayers_evil;
-				curserver.innerHTML += serverplayers_spec;
 				curserver.innerHTML += serverplayers_other;
+				curserver.innerHTML += serverplayers_spec;
 			};
 		};
 		
