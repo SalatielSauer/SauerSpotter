@@ -1,16 +1,16 @@
 a {
 	color: #60a0ea;
-    text-decoration: none;	
+	text-decoration: none;	
 }
 
 body {background-color: #2b2b2b;}
 
 button {
 	background-color: #000000ad;
-    color: white;
-    border-style: solid;
-    border-color: #39489f;
-    font-size: smaller;
+	color: white;
+	border-style: solid;
+	border-color: #39489f;
+	font-size: smaller;
 	cursor: pointer;
 }
 button:focus {outline:0;}
@@ -18,23 +18,23 @@ button:focus {outline:0;}
 span {display: contents;}
 
 @font-face {
-    font-family: 'Sauer_default';
-    src: url('default.ttf');
+	font-family: 'Sauer_default';
+	src: url('default.ttf');
 }
 
 .pserver, .pserver_off {
 	color: lightgrey;
 	font-family: 'Sauer_default';
-    background-color: #00000038;
-    margin: 2;
-    padding: 5;
-    display: flex;
+	background-color: #00000038;
+	margin: 2;
+	padding: 5;
+	display: flex;
 	flex: auto;
 	flex-flow: column;
-    min-width: 300px;
-    text-align: left;
-    padding-left: 10px;
-    box-shadow: 0 0 4px black;
+	min-width: 300px;
+	text-align: left;
+	padding-left: 10px;
+	box-shadow: 0 0 4px black;
 }
 
 .pserver:hover {
@@ -50,93 +50,93 @@ span {display: contents;}
 }
 
 .title {
-    font-family: sans-serif;
-    color: white;
-    text-shadow: 0 0 6px #0000008c;
-    background-color: #2d2d2d36;
-    padding: 10;
-    /* margin-left: -12; */
-    margin-right: -12px;
-    border-style: solid;
-    border-color: #00000047;	
+	font-family: sans-serif;
+	color: white;
+	text-shadow: 0 0 6px #0000008c;
+	background-color: #2d2d2d36;
+	padding: 10;
+	/* margin-left: -12; */
+	margin-right: -12px;
+	border-style: solid;
+	border-color: #00000047;	
 }
 
 .gmodes {
 	display: inline;
-    color: #ffe835;
-    font-variant: all-small-caps;	
+	color: #ffe835;
+	font-variant: all-small-caps;	
 }
 
 .gmaps {color: white;}
 
 .ghost {
-    color: white;
-    font-family: monospace;
-    user-select: all;
-    cursor: initial;
-    padding: 3;
+	color: white;
+	font-family: monospace;
+	user-select: all;
+	cursor: initial;
+	padding: 3;
 }
 
 .gclients {
 	position: relative;
-    left: -55px;
-    font-size: larger;
-    color: white;
+	left: -55px;
+	font-size: larger;
+	color: white;
 	max-width: 0px;
 	user-select: none;
-    font-family: fantasy
+	font-family: fantasy
 }
 
 .serverdialog {
 	display: none;
-    position: fixed;
-    z-index: 2;
-    background-color: #5466cc;
-    padding: 5;
-    width: 500px;
+	position: fixed;
+	z-index: 2;
+	background-color: #5466cc;
+	padding: 5;
+	width: 500px;
 	height: 300px;
-    border-style: solid;
-    border-width: 6px;
-    border-color: #00000070;
-    box-shadow: 0 0 4px black;
-    background-position: center;
+	border-style: solid;
+	border-width: 6px;
+	border-color: #00000070;
+	box-shadow: 0 0 4px black;
+	background-position: center;
 	background-clip: padding-box;
-    background-blend-mode: hard-light;
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-blend-mode: hard-light;
+	background-size: cover;
+	background-repeat: no-repeat;
 	overflow-y: auto;
 	overflow-x: hidden;
 	transition: width 0.05s, height 0.05s;
-    resize: auto;
+	resize: auto;
 }
 
 #icon {
-    position: absolute;
+	position: absolute;
 	margin-left: 1%;
 }
 
 .fas {
-    text-shadow: none;
+	text-shadow: none;
 }
 
 #serverbrowser {
-    padding: 12px;
-    overflow: auto;
-    max-height: 82%;
-    display: flex;
-    background-color: #3F51B5;
-    box-shadow: 0 0 10px 2px black;
-    flex-flow: wrap;
+	padding: 12px;
+	overflow: auto;
+	max-height: 82%;
+	display: flex;
+	background-color: #3F51B5;
+	box-shadow: 0 0 10px 2px black;
+	flex-flow: wrap;
 }
 
 #dialogbutton {
-    position: fixed;
-    background-color: #00000000;
-    border-style: none;
-    font-size: larger;
-    color: #65abf4;
-    margin-top: -2%;
-    margin-left: -1%;
+	position: fixed;
+	background-color: #00000000;
+	border-style: none;
+	font-size: larger;
+	color: #65abf4;
+	margin-top: -2%;
+	margin-left: -1%;
 	padding: 0;
 }
 
@@ -146,50 +146,50 @@ span {display: contents;}
 
 #serverdesc {
 	color: white;
-    font-family: Sauer_default;
-    background-color: #00000047;
-    padding: 10px;
-    border-style: solid;
-    border-width: 2;
-    box-shadow: 0 0 18px black;
+	font-family: Sauer_default;
+	background-color: #00000047;
+	padding: 10px;
+	border-style: solid;
+	border-width: 2;
+	box-shadow: 0 0 18px black;
 }
 
 #serverslots {
-    color: white;
-    font-family: Sauer_default;
-    font-size: small;
-    background-color: #00000047;
-    padding: 5;
+	color: white;
+	font-family: Sauer_default;
+	font-size: small;
+	background-color: #00000047;
+	padding: 5;
 }
 
 #serverplayers {
 	color: white;
-    margin: 5px;
-    font-family: monospace;
-    background-color: #3f51b599;
-    padding: 6;
+	margin: 5px;
+	font-family: monospace;
+	background-color: #3f51b599;
+	padding: 6;
 	min-width: 88%;
 	text-shadow: 0 0 15px black;
 }
 
 #serverteams {
 	font-family: fantasy;
-    background-color: #00000091;
-    display: -webkit-inline-box;
-    padding: 5px;
-    border-radius: 15px;
-    min-width: 18%;	
+	background-color: #00000091;
+	display: -webkit-inline-box;
+	padding: 5px;
+	border-radius: 15px;
+	min-width: 18%;
 }
 
 #serverplayersDetails {
 	color: seashell;
-    font-size: larger;
-    background-color: #00000075;
-    display: inline-block;
-    padding-left: 5;
-    padding-right: 5;
-    font-variant: all-small-caps;
-    min-width: 50%;
+	font-size: larger;
+	background-color: #00000075;
+	display: inline-block;
+	padding-left: 5;
+	padding-right: 5;
+	font-variant: all-small-caps;
+	min-width: 50%;
 }
 
 /* Scrollbar by: GhostRider (https://codepen.io/GhostRider/pen/GHaFw) */
