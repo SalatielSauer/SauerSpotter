@@ -106,7 +106,8 @@ span {display: contents;}
     background-repeat: no-repeat;
 	overflow-y: auto;
 	overflow-x: hidden;
-	transition: width 0.3s, height 0.3s;
+	transition: width 0.1s, height 0.1s;
+    resize: auto;
 }
 
 #icon {

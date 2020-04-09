@@ -95,7 +95,7 @@ function getFixedteam(){
 	if ((data.teams.length > 0) && data.players[i].state != 5){
 		return " | Team: " + data.players[i].team;
 	} else {return ""};
-}
+};
 
 function getPlayerIcon(pstate){
 	if (pstate == 0){return "<i class='fas fa-user-circle'></i>";};
@@ -177,7 +177,7 @@ function create_Serverdetails(host, dialogID, state) {
 		} else {
 			curserver.style.backgroundImage = 'url("https://sauer-sauce.github.io/content/mapshots/coopedit_1.jpg")';
 		};
-		
+
 		//start dialog header
 		curserver.innerHTML = closebtn;
 		curserver.innerHTML += "<center><p id='serverdesc'><i class='fas fa-server' style='float: left'></i> " + data.descriptionStyled + "<img title='" + data.countryName + "' id='icon' src='https://sauertracker.net/images/flags/" + data.country + ".png'></img></p></center>";
