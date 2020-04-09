@@ -106,7 +106,7 @@ span {display: contents;}
     background-repeat: no-repeat;
 	overflow-y: auto;
 	overflow-x: hidden;
-	transition: width 0.1s, height 0.1s;
+	transition: width 0.05s, height 0.05s;
     resize: auto;
 }
 
